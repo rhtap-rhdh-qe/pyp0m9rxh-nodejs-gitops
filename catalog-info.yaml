@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pyp0m9rxh-nodejs-gitops
+  description: This is GitOps manifest for pyp0m9rxh-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=pyp0m9rxh-nodejs
+    backstage.io/kubernetes-id: pyp0m9rxh-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pyp0m9rxh-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pyp0m9rxh-nodejs
